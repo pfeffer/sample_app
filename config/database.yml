@@ -1,13 +1,13 @@
 development:
     adapter: postgresql
     encoding: unicode
-    database: db/sample_db_dev
+    database: sample_db_dev
     username: mk
     pool: 5
 
 test:
     adapter: postgresql
     encoding: unicode
-    database: db/sample_db_test
+    database: sample_db_test
     username: mk
     pool: 5
