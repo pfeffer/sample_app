@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+	before_filter :signed_in_user, only: [:new, :create]
 	def new
 	end
 
@@ -17,5 +18,12 @@ class SessionsController < ApplicationController
 		sign_out
 		redirect_to root_path
 	end
+
+	private
+		def signed_in_user
+			if signed_in?
+				redirect_to root_path
+			end
+		end
 
 end
