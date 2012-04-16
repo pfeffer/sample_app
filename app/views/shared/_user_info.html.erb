@@ -1,11 +1,12 @@
-<%= f.label :name %>
-<%= f.text_field :name %>
-
-<%= f.label :email %>
-<%= f.text_field :email %>
-
-<%= f.label :password %>
-<%= f.password_field :password %>
-
-<%= f.label :password_confirmation, "Confirm Password" %>
-<%= f.password_field :password_confirmation %>
+<a href="<%= user_path(current_user) %>">
+  <%= gravatar_for current_user, size: 52 %>
+</a>
+<h1>
+  <%= current_user.name %>
+</h1>
+<span>
+  <%= link_to "view my profile", current_user %>
+</span>
+<span>
+  <%= pluralize(current_user.microposts.count, "micropost") %>
+</span>
